@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timed Quiz App — Test Yourself Against the Clock</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>⏱️ Timed Quiz</h1>
+  <p class="tagline">Ten questions. One clock. No second chances.</p>
+  <p class="best">🏆 Best score: <span id="bestScore">0</span> / 10</p>
+</header>
+
+<main class="card" id="app">
+  <!-- Setup screen -->
+  <section id="setupScreen">
+    <h2>Set up your round</h2>
+    <label>Category
+      <select id="categorySelect">
+        <option value="mixed">Mixed — all categories</option>
+        <option value="general">General Knowledge</option>
+        <option value="science">Science</option>
+        <option value="tech">Technology</option>
+        <option value="geography">Geography</option>
+      </select>
+    </label>
+    <label>Difficulty
+      <select id="difficultySelect">
+        <option value="easy">Easy — 30s per question</option>
+        <option value="medium" selected>Medium — 20s per question</option>
+        <option value="hard">Hard — 15s per question</option>
+      </select>
+    </label>
+    <p class="hint">Questions come from the Open Trivia DB when you're online, with a built-in question bank as a fallback so the quiz always works offline.</p>
+    <button id="startBtn" class="primary">Start Quiz</button>
+  </section>
+
+  <!-- Quiz screen -->
+  <section id="quizScreen" hidden>
+    <div class="quiz-meta">
+      <span id="progressText">Question 1 of 10</span>
+      <span id="scoreText">Score: 0</span>
+    </div>
+    <div class="timer-wrap">
+      <div class="timer-bar" id="timerBar"></div>
+      <span class="timer-num" id="timerNum">20</span>
+    </div>
+    <h2 id="questionText"></h2>
+    <p class="category-tag" id="questionCategory"></p>
+    <div id="answers" class="answers"></div>
+    <p id="feedback" class="feedback" aria-live="polite"></p>
+    <button id="nextBtn" class="primary" hidden>Next Question →</button>
+  </section>
+
+  <!-- Results screen -->
+  <section id="resultsScreen" hidden>
+    <h2 id="resultHeading"></h2>
+    <p class="final-score" id="finalScore"></p>
+    <p id="resultMessage"></p>
+    <p id="newBest" class="new-best" hidden>🎉 New best score!</p>
+    <button id="reviewBtn" class="secondary">Review My Mistakes</button>
+    <button id="restartBtn" class="primary">Play Again</button>
+    <div id="reviewList" class="review-list" hidden></div>
+  </section>
+</main>
+
+<footer><p>Built by Clamor · Timed Quiz App · Questions: Open Trivia DB (online) + built-in bank (offline)</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
