@@ -42,20 +42,6 @@ python3 -m http.server --directory src 8000
 
 Screenshots live in [`screenshots/`](screenshots/) — see `SCREENSHOTS.md` there for the naming convention.
 
-## Project Structure
-
-```
-timed-quiz-app/
-├── src/
-│   ├── index.html   # setup / quiz / results screens
-│   ├── styles.css   # dark theme, timer bar, answer states
-│   └── app.js       # game logic, timer, trivia fetch + fallback bank
-├── assets/          # logo.svg
-├── docs/            # ARCHITECTURE.md
-├── tests/           # TESTING.md + validate.py
-└── screenshots/     # SCREENSHOTS.md
-```
-
 ## License
 
 MIT — see [LICENSE](LICENSE). Copyright (c) 2026 Clamor.
